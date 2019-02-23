@@ -10,7 +10,7 @@
         <param-value>
             classpath:de/diedavids/cuba/example/component/web-app.properties
             /WEB-INF/local.app.properties
-            "file:${catalina.base}/conf/app/local.app.properties"
+            "file:${catalina.base}/conf/example-component/local.app.properties"
         </param-value>
     </context-param>
     <!--Application components-->

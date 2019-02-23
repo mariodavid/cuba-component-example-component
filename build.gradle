@@ -23,7 +23,7 @@ plugins {
     id 'net.researchgate.release' version '2.2.3'
 }
 
-def modulePrefix = 'app'
+def modulePrefix = 'example-component'
 
 def globalModule = project(":${modulePrefix}-global")
 def coreModule = project(":${modulePrefix}-core")
@@ -125,6 +125,13 @@ configure(globalModule) {
     entitiesEnhancing {
         main {
             enabled = true
+        }
+    }
+
+    jar {
+        manifest {
+            attributes('App-Component-Id': cuba.artifact.group)
+            attributes('App-Component-Version': cuba.artifact.version + (cuba.artifact.isSnapshot ? '-SNAPSHOT' : ''))
         }
     }
 }
