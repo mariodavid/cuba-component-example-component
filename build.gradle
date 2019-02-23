@@ -181,7 +181,17 @@ configure(coreModule) {
         dbUser = 'sa'
         dbPassword = ''
     }
+    task createTestDb(dependsOn: assembleDbScripts, description: 'Creates local HSQL database', type: CubaDbCreation) {
+        dbms = 'hsql'
+        host = "localhost:9010"
+        dbName = 'ddcec'
+        dbUser = 'sa'
+        dbPassword = ''
+        auxiliaryScript = file('test/de/diedavids/cuba/example/component/create-db.sql')
+    }
+
 }
+
 
 configure(webModule) {
     configurations {

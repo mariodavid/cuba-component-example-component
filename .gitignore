@@ -6,6 +6,8 @@
 build/*
 deploy/*
 modules/*/build/*
+modules/*/test-home/*
 .idea/*
 out
 test-run
+*.DS_Store
