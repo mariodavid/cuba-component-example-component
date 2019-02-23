@@ -16,5 +16,5 @@ workflow "Release" {
 action "Execute Gradle task" {
   uses = "MrRamych/gradle-actions@1.0"
   args = "clean assemble bintrayUpload --debug"
-  secrets = ["UPLOAD_REPOSITORY_PASSWORD", "UPLOAD_REPOSITORY_USERNAME"]
+  secrets = ["BINTRAY_USERNAME", "BINTRAY_PASSWORD"]
 }
