@@ -9,11 +9,11 @@ action "Build" {
 }
 
 workflow "Release" {
-  resolves = ["Execute Gradle task"]
   on = "release"
+  resolves = ["Release to Bintray"]
 }
 
-action "Execute Gradle task" {
+action "Release to Bintray" {
   uses = "MrRamych/gradle-actions@1.0"
   args = "clean assemble bintrayUpload --debug"
   secrets = ["BINTRAY_USERNAME", "BINTRAY_PASSWORD"]
